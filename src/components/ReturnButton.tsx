@@ -9,7 +9,7 @@ const ReturnButton = () => {
       type="button"
       className="flex items-center gap-1 rounded-2xl pl-1 pr-4 text-slate-500 hover:bg-slate-50"
       onClick={() => {
-        navigate(-1);
+        navigate('home');
       }}
     >
       <img src={ChevronSvg} alt="" />
