@@ -5,6 +5,7 @@ import './index.css';
 import ErrorPage from './pages/ErrorPage';
 import Root from './pages/Root';
 import Home from './pages/Home';
+import MealDetail from './pages/MealDetail';
 
 const router = createBrowserRouter([
   {
@@ -19,6 +20,10 @@ const router = createBrowserRouter([
       {
         path: '/home',
         element: <Home />,
+      },
+      {
+        path: '/meal-detail',
+        element: <MealDetail />,
       },
     ],
   },
