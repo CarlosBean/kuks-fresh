@@ -8,7 +8,7 @@ type Props = {
 
 const CardList = ({ category }: Props) => {
   const filterType = category ? 'c' : 'a';
-  const filterText = category || 'mexican';
+  const filterText = category || 'indian';
 
   const { isLoading, data } = useAllMealsByFilter(filterType, filterText);
 

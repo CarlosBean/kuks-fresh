@@ -12,6 +12,11 @@ const getAllByFilter = (type: string, text: string) => async () => {
   const response = await fetch(`${baseURL}/filter.php?${type}=${text}`).then(
     res => res.json()
   );
+
+  if (type === 'a') {
+    return response.meals.slice(0, 10);
+  }
+
   return response.meals;
 };
 
