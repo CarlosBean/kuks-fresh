@@ -13,7 +13,9 @@ const CardList = ({ category }: Props) => {
   const { isLoading, data } = useAllMealsByFilter(filterType, filterText);
 
   if (isLoading) {
-    return <div className="grid h-full place-content-center">Loading...</div>;
+    return (
+      <div className="grid h-60 place-content-center text-xl">Loading...</div>
+    );
   }
 
   return (

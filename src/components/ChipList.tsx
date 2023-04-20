@@ -12,7 +12,9 @@ const ChipList = ({ selected, setSelected }: Props) => {
   const { isLoading, data } = useAllCategories();
 
   if (isLoading) {
-    return <div className="grid h-full place-content-center">Loading...</div>;
+    return (
+      <div className="grid h-full place-content-center text-xl">Loading...</div>
+    );
   }
 
   return (
