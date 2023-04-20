@@ -1,7 +1,9 @@
 # kuks-fresh
-## a react project that consumes themealdb API, demo can be found in: https://kuks-fresh.vercel.app/
+A project with React that consumes themealdb API, demo can be found in: 
+- https://kuks-fresh.vercel.app/
 
-![image](https://user-images.githubusercontent.com/28544358/233446027-c48f652c-bae1-4d9c-bccb-b000588a858d.png)
+![image](https://user-images.githubusercontent.com/28544358/233448361-f6ddb848-29b1-4a6a-92a1-dc643303e052.png)
+
 
 ## Technologies / libraries used:
 - react
