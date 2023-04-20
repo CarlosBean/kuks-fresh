@@ -1,20 +1,29 @@
+import { Dispatch, SetStateAction } from 'react';
+import { useAllCategories } from '../api/Categories';
+import { Category } from '../models/Category';
 import Chip from './Chip';
 
-const ChipList = () => {
-  const data = [
-    {
-      idCategory: '1',
-      strCategory: 'Beef',
-      strCategoryThumb: 'https://www.themealdb.com/images/category/beef.png',
-      strCategoryDescription:
-        'Beef is the culinary name for meat from cattle, particularly skeletal muscle. Humans have been eating beef since prehistoric times.[1] Beef is a source of high-quality protein and essential nutrients.[2]',
-    },
-  ];
+type Props = {
+  selected: string;
+  setSelected: Dispatch<SetStateAction<string>>;
+};
+
+const ChipList = ({ selected, setSelected }: Props) => {
+  const { isLoading, data } = useAllCategories();
+
+  if (isLoading) {
+    return <div className="grid h-full place-content-center">Loading...</div>;
+  }
 
   return (
     <div className="flex flex-wrap justify-center gap-4">
-      {data.map(item => (
-        <Chip key={item.idCategory} data={item}></Chip>
+      {data.map((item: Category) => (
+        <Chip
+          key={item.idCategory}
+          data={item}
+          onClick={() => setSelected(item.strCategory)}
+          isActive={selected === item.strCategory}
+        ></Chip>
       ))}
     </div>
   );
