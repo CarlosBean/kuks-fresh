@@ -1,18 +1,24 @@
+import { useAllMealsByFilter } from '../api/Meals';
+import { Meal } from '../models/Meal';
 import Card from './Card';
 
-const CardList = () => {
-  const data = [
-    {
-      strMeal: 'Braised Beef Chilli',
-      strMealThumb:
-        'https://www.themealdb.com/images/media/meals/uuqvwu1504629254.jpg',
-      idMeal: '52826',
-    },
-  ];
+type Props = {
+  category?: string;
+};
+
+const CardList = ({ category }: Props) => {
+  const filterType = category ? 'c' : 'a';
+  const filterText = category || 'mexican';
+
+  const { isLoading, data } = useAllMealsByFilter(filterType, filterText);
+
+  if (isLoading) {
+    return <div className="grid h-full place-content-center">Loading...</div>;
+  }
 
   return (
     <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3">
-      {data.map(item => (
+      {data.map((item: Meal) => (
         <Card key={item.idMeal} data={item} />
       ))}
     </div>
