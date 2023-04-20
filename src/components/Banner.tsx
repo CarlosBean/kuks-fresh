@@ -4,8 +4,8 @@ type Props = {
 
 const Banner = ({ img }: Props) => {
   return (
-    <section className="object-cover">
-      {img && <img className="mx-auto" src={img} alt="" />}
+    <section>
+      {img && <img className="w-full object-cover" src={img} alt="" />}
     </section>
   );
 };
