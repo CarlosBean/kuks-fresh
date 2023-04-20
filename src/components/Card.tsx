@@ -13,6 +13,7 @@ const Card = ({ data }: Props) => {
         <img
           className="h-48 w-full rounded-t-3xl object-cover"
           src={data.strMealThumb}
+          loading="lazy"
           alt=""
         />
       </a>
