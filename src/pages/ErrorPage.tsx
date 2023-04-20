@@ -1,4 +1,5 @@
 import { isRouteErrorResponse, useRouteError } from 'react-router-dom';
+import ReturnButton from '../components/ReturnButton';
 
 const ErrorPage = () => {
   const error = useRouteError();
@@ -16,6 +17,8 @@ const ErrorPage = () => {
           {error.data?.message && <p>{error.data.message}</p>}
         </>
       )}
+
+      <ReturnButton />
     </div>
   );
 };
