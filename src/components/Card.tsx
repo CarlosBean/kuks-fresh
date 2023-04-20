@@ -1,6 +1,7 @@
 import { Meal } from '../models/Meal';
 import HeartSvg from '../assets/icons/heart.svg';
 import Stars from './Stars';
+import { Link } from 'react-router-dom';
 
 type Props = {
   data: Meal;
@@ -9,14 +10,14 @@ type Props = {
 const Card = ({ data }: Props) => {
   return (
     <div className="rounded-3xl border border-gray-200 bg-white">
-      <a href="/">
+      <Link to={`meal-detail/${data.idMeal}`}>
         <img
           className="h-48 w-full rounded-t-3xl object-cover"
           src={data.strMealThumb}
           loading="lazy"
           alt=""
         />
-      </a>
+      </Link>
       <div className="px-5 py-3">
         <div className="mb-2 flex items-center justify-between">
           <h5 className="text-lg font-medium tracking-tight text-red-600">
